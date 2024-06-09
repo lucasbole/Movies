@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.html">
+    <script type= "module" src="reviews.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Reviews</title>
+</head>
+<header>
+  <h1>Add Review</h1>   
+  <a id="atras" href="home.html"> <button> Go Back</button></a>
+</header>
+<body>
+  <form action="/logout" method="GET">
+    <input id="logout"  type="submit" value="Logout">
+  </form>
+  <form id="review-form">
+    <select id="movietitle" name="movietitle" class="dropdown">
+      <option value="Episode I - The Phantom Menace" class="option">Episode I - The Phantom Menace</option>
+      <option value="Episode II - Attack of the Clones" class="option">Episode II - Attack of the Clones</option>
+      <option value="Episode III - Revenge of the Sith" class="option">Episode III - Revenge of the Sith</option>
+      <option value="Episode IV - A New Hope" class="option">Episode IV - A New Hope</option>
+      <option value="Episode V - The Empire Strikes Back" class="option">Episode V - The Empire Strikes Back</option>
+      <option value="Episode VI - Return of the Jedi" class="option">Episode VI - Return of the Jedi</option>
+      <option value="Episode VII - The Force Awakens" class="option">Episode VII - The Force Awakens</option>
+      <option value="Episode VIII - The Last Jedi" class="option">Episode VIII - The Last Jedi</option>
+      <option value="Episode IX - The Rise of Skywalker" class="option">Episode IX - The Rise of Skywalker</option>
+      <option value="Rogue One: a Star Wars Story" class="option">Rogue One: a Star Wars Story</option>
+    </select>
+    <br>
+    <input type="text" id="review" name="review" placeholder="Write your review">
+    <br>
+    <input id="botones" type="submit" value="Send">
+    <div id="reviews-actuales" class="reviews-actuales"></div>
+  </form>
+  <script>
+    const reviewsActuales = document.getElementById("reviews-actuales")
+    fetch("/reviews-actuales").then((response) => {
+      response.json().then((result) => {
+        result.forEach((review) => {
+          const div = document.createElement("div")
+          const title = document.createElement("h2")
+          title.textContent = review.movieTitle
+          const reviewText = document.createElement("p")
+          reviewText.textContent = review.reviewText
+          const username = document.createElement("p")
+          username.textContent = review.username
+          div.className = "review-anterior"
+          div.append(title)
+          div.append(reviewText)
+          div.append(username)
+          reviewsActuales.append(div)
+        })
+      })
+    })
+  </script>
+</body>
+</html>

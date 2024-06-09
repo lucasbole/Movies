@@ -88,3 +88,4 @@ const encryptedLoginPassword = CryptoJS.AES.encrypt(pass, key).toString();
 }
 // Init app
 new Login();
+

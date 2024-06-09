@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title> Star Wars Search</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reviews.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="app.js" defer></script>
 </head>
@@ -12,11 +13,12 @@
   <button id="asc"><i class="fas fa-sort-amount-up"></i> By year </button>
 <button id="desc"><i class="fas fa-sort-amount-down"></i> Recents</button>
 <button id="order"><i class="fas fa-list-ol"></i> Order to Watch</button>
+<input type="text" id="search-input" placeholder="Search..">
+<button id="search-button"><i class="fas fa-search"></i> Search</button>
+<a href="reviews.html"> <button> Reviews</button> </a>
   <form action="/logout" method="GET">
     <input id="logout"  type="submit" value="Logout">
   </form>
-  <input type="text" id="search-input" placeholder="Search..">
-  <button id="search-button"><i class="fas fa-search"></i> Search</button>
   <div id="movie-container"></div>
 </body>
 </html>

@@ -76,7 +76,7 @@ class App {
     const searchInput = document.querySelector("#search-input").value.toLowerCase();
     console.log("Searching for:", searchInput);
     const filteredMovies = this.moviesList.filter(movie =>
-      movie.searchtitle.toLowerCase() === (searchInput)
+      movie.title.toLowerCase().includes(searchInput)
     );
     console.log("Filtered movies:", filteredMovies);
     
@@ -140,5 +140,6 @@ class Movie {
 // script.js
 const app = new App();
 app.loadMovies();
+
 
 

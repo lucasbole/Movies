@@ -50,3 +50,4 @@ return done(null, usersFromDB);
 }
 
 export default Authorization;
+
