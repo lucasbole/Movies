@@ -14,7 +14,7 @@ class Authorization {
             cookie: { secure: false }
         }));
 
-        app.use(passport.initialize()); // init passport on every route call
+        app.use(passport.initialize()); 
         app.use(passport.session());
         passport.use(new LocalStrategy(this.verifyIdentity));
 

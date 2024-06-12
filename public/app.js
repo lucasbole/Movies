@@ -72,7 +72,6 @@ class App {
     this.moviesList = json.movies;
     this._renderMovies();
 
-    // Crear instancia de Search y pasar la lista de películas
     const search = new Search(this.moviesList);
   }
 

@@ -73,7 +73,7 @@ class MovieAppServer {
       const collection = db.collection("users");
       await collection.updateOne(query, update, params);
       console.log("User registered successfully");
-      res.redirect("/login"); // Redirigir al login después del registro exitoso
+      res.redirect("/login"); 
     } catch (err) {
       console.error("Error during registration:", err);
       res.status(500).send("Error during registration");
