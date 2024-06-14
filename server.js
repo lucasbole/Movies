@@ -34,6 +34,8 @@ class MovieAppServer {
     app.post("/reviews/", authorization.checkAuthenticated, this.doReview);
     app.get("/reviews-actuales", authorization.checkAuthenticated, this.getReviews)
 
+    app.get('/api/movies', authorization.checkAuthenticated, this.fetchJson);
+
     app.listen(3000, () => console.log("Listening on port 3000"));
   }
 
@@ -129,6 +131,19 @@ class MovieAppServer {
     console.log(reviews)
     res.status(200).send(reviews)
   }
+
+  async fetchJson(req, res) {
+    const API_URL = 'https://www.mockachino.com/bae58b2a-f8d0-48/movies';
+    try {
+        const response = await fetch(API_URL);
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).send('Error fetching data');
+    }
+}
+
 }
 
 new MovieAppServer();

@@ -1,7 +1,7 @@
 import Movie from './movie.js';
 import Search from './search.js';
 
-const JSON_PATH = 'https://www.mockachino.com/bae58b2a-f8d0-48/movies';
+const JSON_PATH = '/api/movies';
 //Clase 1
 class App {
   constructor() {
