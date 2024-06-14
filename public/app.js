@@ -1,6 +1,6 @@
 import Movie from './movie.js';
 import Search from './search.js';
-//ahora si conectamos al servidor la api
+
 const JSON_PATH = '/api/movies';
 //Clase 1
 class App {
